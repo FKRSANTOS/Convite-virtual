@@ -1,0 +1,1607 @@
+/*==================================================
+LA NOTTE
+Design System
+Versão 1.0
+==================================================*/
+
+/*==========================
+RESET
+==========================*/
+
+*,
+*::before,
+*::after{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    overflow-x:hidden;
+
+}
+
+/*==========================
+VARIÁVEIS
+==========================*/
+
+:root{
+
+    /* Paleta */
+
+    --cream:#F8F4EC;
+    --paper:#FFFDF9;
+    --olive:#66785F;
+    --olive-light:#87977D;
+    --wine:#6B3030;
+    --gold:#C6A25A;
+    --gold-light:#E6D4A7;
+
+    --text:#403B36;
+    --text-soft:#6D665F;
+
+    --border:#E8E0D4;
+
+    /* Sombras */
+
+    --shadow-soft:
+
+        0 12px 40px rgba(0,0,0,.06);
+
+    --shadow-card:
+
+        0 25px 60px rgba(0,0,0,.08);
+
+    /* Bordas */
+
+    --radius-small:12px;
+    --radius:20px;
+    --radius-large:34px;
+
+    /* Transições */
+
+    --transition:.35s ease;
+
+}
+
+/*==========================
+BODY
+==========================*/
+
+body{
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            #FCF8F2,
+            #F7F2E8,
+            #F5EFE5
+        );
+
+    color:var(--text);
+
+    font-family:'Lora',serif;
+
+    line-height:1.8;
+
+    min-height:100vh;
+
+}
+
+/*==========================
+TIPOGRAFIA
+==========================*/
+
+h1,
+h2,
+h3,
+h4{
+
+    font-family:
+
+    'Cormorant Garamond',
+    serif;
+
+    font-weight:500;
+
+    color:var(--wine);
+
+    letter-spacing:.02em;
+
+}
+
+h1{
+
+    font-size:clamp(56px,7vw,94px);
+
+}
+
+h2{
+
+    font-size:clamp(38px,5vw,62px);
+
+}
+
+h3{
+
+    font-size:30px;
+
+}
+
+p{
+
+    font-size:18px;
+
+    color:var(--text-soft);
+
+}
+
+small{
+
+    color:#8C837A;
+
+    font-size:14px;
+
+}
+
+/*==========================
+LINKS
+==========================*/
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+/*==========================
+IMAGENS
+==========================*/
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+/*==========================
+CONTAINER
+==========================*/
+
+.container{
+
+    width:min(1120px,92%);
+
+    margin:auto;
+
+}
+
+/*==========================
+SEÇÕES
+==========================*/
+
+.section{
+
+    padding:
+
+    120px
+
+    0;
+
+    position:relative;
+
+}
+
+.section-header{
+
+    text-align:center;
+
+    max-width:720px;
+
+    margin:auto auto 70px;
+
+}
+
+.section-subtitle{
+
+    display:inline-block;
+
+    font-family:
+
+    'Montserrat',
+    sans-serif;
+
+    font-size:12px;
+
+    letter-spacing:.35em;
+
+    text-transform:uppercase;
+
+    color:var(--olive);
+
+    margin-bottom:18px;
+
+}
+
+.section-header p{
+
+    margin-top:20px;
+
+}
+
+/*==========================
+DIVISOR
+==========================*/
+
+.divider{
+
+    width:80px;
+
+    height:2px;
+
+    background:
+
+    linear-gradient(
+        to right,
+        transparent,
+        var(--gold),
+        transparent
+    );
+
+    margin:
+
+    28px auto;
+
+}
+
+/*==========================
+PAPER CARD
+==========================*/
+
+.paper-card{
+
+    background:var(--paper);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-large);
+
+    padding:55px;
+
+    box-shadow:var(--shadow-soft);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.paper-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(
+        circle at top left,
+        rgba(255,255,255,.65),
+        transparent 45%
+    );
+
+    pointer-events:none;
+
+}
+
+/*==========================
+BOTÕES
+==========================*/
+
+.primary-button{
+
+    position:relative;
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:
+
+    18px
+    42px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:var(--wine);
+
+    color:#fff;
+
+    font-family:
+
+    'Montserrat',
+    sans-serif;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    letter-spacing:.04em;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+    overflow:hidden;
+
+}
+
+.primary-button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:70%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.45),
+
+        transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+    transition:.9s;
+
+}
+
+.primary-button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+    0 18px 35px rgba(107,48,48,.22);
+
+}
+
+.primary-button:hover::before{
+
+    left:160%;
+
+}
+
+/*==================================================
+PRELOADER
+==================================================*/
+
+#preloader{
+
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+        radial-gradient(circle at top,
+        rgba(255,255,255,.8),
+        transparent 55%),
+        var(--cream);
+
+    z-index:9999;
+
+    transition:opacity .8s ease,
+               visibility .8s ease;
+
+}
+
+#preloader.hidden{
+
+    opacity:0;
+    visibility:hidden;
+
+}
+
+.loader{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    gap:22px;
+
+    animation:fadeUp 1.2s ease;
+
+}
+
+.loader img{
+
+    width:95px;
+
+    animation:
+        oliveFloat 5s ease-in-out infinite;
+
+}
+
+.loader h2{
+
+    font-size:58px;
+
+    color:var(--wine);
+
+}
+
+.loader span{
+
+    font-family:'Montserrat',sans-serif;
+
+    font-size:13px;
+
+    letter-spacing:.25em;
+
+    text-transform:uppercase;
+
+    color:var(--olive);
+
+}
+
+/*==================================================
+HERO
+==================================================*/
+
+#hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+}
+
+.hero-background{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+.olive-left{
+
+    position:absolute;
+
+    left:-120px;
+
+    top:120px;
+
+    width:340px;
+
+    opacity:.14;
+
+}
+
+.lemon-right{
+
+    position:absolute;
+
+    right:-100px;
+
+    bottom:60px;
+
+    width:310px;
+
+    opacity:.12;
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    width:min(760px,90%);
+
+    text-align:center;
+
+}
+
+.eyebrow{
+
+    font-family:'Montserrat',sans-serif;
+
+    text-transform:uppercase;
+
+    letter-spacing:.45em;
+
+    font-size:12px;
+
+    color:var(--olive);
+
+    margin-bottom:18px;
+
+}
+
+.hero-content h1{
+
+    line-height:.95;
+
+    margin-bottom:20px;
+
+}
+
+.hero-text{
+
+    max-width:560px;
+
+    margin:auto;
+
+    font-size:21px;
+
+}
+
+.hero-content .primary-button{
+
+    margin-top:55px;
+
+}
+
+/*==================================================
+BOTÃO DA MÚSICA
+==================================================*/
+
+.music-button{
+
+    position:fixed;
+
+    right:28px;
+
+    bottom:28px;
+
+    width:58px;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.82);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:var(--shadow-soft);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    z-index:1000;
+
+}
+
+.music-button.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.music-button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.music-button svg{
+
+    width:24px;
+
+    fill:none;
+
+    stroke:var(--wine);
+
+    stroke-width:1.7;
+
+}
+
+/*==================================================
+BENVENUTI
+==================================================*/
+
+#welcome{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(248,244,236,.96);
+
+    backdrop-filter:blur(6px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.8s;
+
+    z-index:900;
+
+}
+
+#welcome.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.welcome-box{
+
+    text-align:center;
+
+}
+
+.welcome-box span{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:82px;
+
+    color:var(--wine);
+
+    letter-spacing:.04em;
+
+    animation:fadeUp 1s ease;
+
+}
+
+/*==================================================
+ANIMAÇÕES
+==================================================*/
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+@keyframes oliveFloat{
+
+    0%{
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-8px)
+            rotate(2deg);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+}
+
+/*==================================================
+EFEITO DE ENTRADA DAS SEÇÕES
+==================================================*/
+
+.section{
+
+    opacity:0;
+
+    transform:
+        translateY(70px);
+
+    transition:
+
+        opacity .9s ease,
+
+        transform .9s ease;
+
+}
+
+.section.visible{
+
+    opacity:1;
+
+    transform:
+        translateY(0);
+
+}
+
+/*==================================================
+ORGANIZAÇÃO
+==================================================*/
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+
+    gap:35px;
+
+    margin-top:70px;
+
+}
+
+.card{
+
+    position:relative;
+
+    background:rgba(255,253,249,.88);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(198,162,90,.18);
+
+    border-radius:28px;
+
+    padding:42px;
+
+    transition:.45s;
+
+    overflow:hidden;
+
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at top right,
+
+    rgba(198,162,90,.10),
+
+    transparent 55%);
+
+    pointer-events:none;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+
+    0 30px 60px rgba(0,0,0,.08);
+
+}
+
+.card .icon{
+
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    background:#FFF;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.05);
+
+}
+
+.card .icon img{
+
+    width:34px;
+
+}
+
+.card h3{
+
+    margin-bottom:15px;
+
+}
+
+.card p{
+
+    margin-bottom:22px;
+
+}
+
+/*==================================================
+TIMELINE
+==================================================*/
+
+.timeline{
+
+    margin-top:35px;
+
+    border-left:2px solid var(--gold-light);
+
+    padding-left:28px;
+
+}
+
+.step{
+
+    position:relative;
+
+    margin-bottom:35px;
+
+}
+
+.step:last-child{
+
+    margin-bottom:0;
+
+}
+
+.step::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:15px;
+    height:15px;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    left:-36px;
+
+    top:6px;
+
+    box-shadow:
+
+    0 0 0 6px rgba(198,162,90,.15);
+
+}
+
+.step span{
+
+    display:block;
+
+    font-family:'Montserrat',sans-serif;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:var(--olive);
+
+    letter-spacing:.12em;
+
+    margin-bottom:6px;
+
+}
+
+/*==================================================
+ESCOLHA DA DATA
+==================================================*/
+
+.date-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin-top:60px;
+
+}
+
+.date-card{
+
+    cursor:pointer;
+
+}
+
+.date-card input{
+
+    display:none;
+
+}
+
+.date-content{
+
+    background:#FFFDF9;
+
+    border:2px solid var(--border);
+
+    border-radius:24px;
+
+    padding:38px;
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.date-content:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+
+    0 22px 45px rgba(0,0,0,.06);
+
+}
+
+.date-card input:checked + .date-content{
+
+    background:var(--wine);
+
+    color:#FFF;
+
+    border-color:var(--gold);
+
+}
+
+.date-card input:checked + .date-content h3,
+
+.date-card input:checked + .date-content span,
+
+.date-card input:checked + .date-content small{
+
+    color:#FFF;
+
+}
+
+.day{
+
+    display:block;
+
+    font-family:'Montserrat';
+
+    font-size:12px;
+
+    letter-spacing:.22em;
+
+    text-transform:uppercase;
+
+    margin-bottom:18px;
+
+}
+
+.date-content h3{
+
+    font-size:62px;
+
+    transition:.35s;
+
+}
+
+.date-card input:checked + .date-content h3{
+
+    transform:scale(1.08);
+
+}
+
+.date-content small{
+
+    display:block;
+
+    margin-top:12px;
+
+}
+
+/*==================================================
+FORMULÁRIO
+==================================================*/
+
+.form-card{
+
+    max-width:760px;
+
+    margin:auto;
+
+}
+
+.input-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-bottom:34px;
+
+}
+
+.input-group label{
+
+    font-family:'Montserrat';
+
+    font-size:13px;
+
+    font-weight:600;
+
+    letter-spacing:.08em;
+
+    margin-bottom:12px;
+
+    color:var(--olive);
+
+}
+
+.input-group input,
+
+.input-group textarea{
+
+    width:100%;
+
+    padding:18px 22px;
+
+    border:2px solid var(--border);
+
+    border-radius:16px;
+
+    background:#FFF;
+
+    font-size:16px;
+
+    font-family:'Lora';
+
+    color:var(--text);
+
+    transition:.3s;
+
+}
+
+.input-group textarea{
+
+    resize:vertical;
+
+    min-height:120px;
+
+}
+
+.input-group input:focus,
+
+.input-group textarea:focus{
+
+    outline:none;
+
+    border-color:var(--gold);
+
+    box-shadow:
+
+    0 0 0 5px rgba(198,162,90,.12);
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+.radio-options{
+
+    display:flex;
+
+    gap:18px;
+
+}
+
+.radio-card{
+
+    flex:1;
+
+    cursor:pointer;
+
+}
+
+.radio-card input{
+
+    display:none;
+
+}
+
+.radio-card span{
+
+    display:block;
+
+    text-align:center;
+
+    padding:18px;
+
+    border-radius:16px;
+
+    border:2px solid var(--border);
+
+    transition:.35s;
+
+    background:#FFF;
+
+}
+
+.radio-card input:checked + span{
+
+    background:var(--wine);
+
+    color:#FFF;
+
+    border-color:var(--gold);
+
+}
+
+.submit-area{
+
+    margin-top:45px;
+
+    text-align:center;
+
+}
+
+.submit-area .primary-button{
+
+    width:100%;
+
+    max-width:420px;
+
+}
+
+/*==================================================
+MENSAGEM FINAL
+==================================================*/
+
+#finalMessage{
+
+    text-align:center;
+
+    padding-top:80px;
+    padding-bottom:120px;
+
+}
+
+#finalMessage .highlight{
+
+    font-size:24px;
+
+    color:var(--wine);
+
+    font-family:'Cormorant Garamond',serif;
+
+    margin:25px auto;
+
+    max-width:650px;
+
+}
+
+.narrow{
+
+    max-width:760px;
+
+}
+
+/*==================================================
+TELA DE SUCESSO
+==================================================*/
+
+.success-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(248,244,236,.97);
+
+    backdrop-filter:blur(12px);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.5s;
+
+    z-index:3000;
+
+}
+
+.success-screen.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.success-card{
+
+    width:min(620px,90%);
+
+    background:#FFFDF9;
+
+    padding:70px;
+
+    border-radius:32px;
+
+    text-align:center;
+
+    box-shadow:
+
+        0 35px 90px rgba(0,0,0,.10);
+
+}
+
+.success-icon{
+
+    width:110px;
+
+    margin:auto auto 35px;
+
+}
+
+.success-icon svg{
+
+    stroke:var(--gold);
+
+    stroke-width:2.5;
+
+    fill:none;
+
+}
+
+.success-subtitle{
+
+    display:block;
+
+    font-family:'Montserrat';
+
+    letter-spacing:.35em;
+
+    text-transform:uppercase;
+
+    color:var(--olive);
+
+    margin-bottom:12px;
+
+}
+
+/*==================================================
+FOOTER
+==================================================*/
+
+footer{
+
+    padding:80px 20px;
+
+    text-align:center;
+
+    position:relative;
+
+}
+
+.footer-decoration{
+
+    width:140px;
+
+    margin:auto auto 30px;
+
+    opacity:.35;
+
+}
+
+footer h3{
+
+    font-size:42px;
+
+    margin-bottom:10px;
+
+}
+
+footer span{
+
+    color:var(--text-soft);
+
+    font-style:italic;
+
+}
+
+/*==================================================
+OVERLAY
+==================================================*/
+
+#overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.08);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+    pointer-events:none;
+
+}
+
+/*==================================================
+EFEITO NOS INPUTS
+==================================================*/
+
+input,
+textarea{
+
+    transition:
+
+        border-color .35s,
+
+        box-shadow .35s,
+
+        transform .25s;
+
+}
+
+input:hover,
+textarea:hover{
+
+    transform:translateY(-1px);
+
+}
+
+/*==================================================
+SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#F4EFE7;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--gold);
+
+    border-radius:999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#B38C43;
+
+}
+
+/*==================================================
+RESPONSIVIDADE
+==================================================*/
+
+@media(max-width:900px){
+
+    .section{
+
+        padding:90px 0;
+
+    }
+
+    .paper-card{
+
+        padding:35px;
+
+    }
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .date-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    h1{
+
+        font-size:60px;
+
+    }
+
+    h2{
+
+        font-size:42px;
+
+    }
+
+    p{
+
+        font-size:16px;
+
+    }
+
+    .hero-text{
+
+        font-size:18px;
+
+    }
+
+    .music-button{
+
+        right:18px;
+
+        bottom:18px;
+
+    }
+
+    .radio-options{
+
+        flex-direction:column;
+
+    }
+
+    .success-card{
+
+        padding:45px 30px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .paper-card{
+
+        padding:25px;
+
+        border-radius:22px;
+
+    }
+
+    .primary-button{
+
+        width:100%;
+
+    }
+
+    .loader h2{
+
+        font-size:42px;
+
+    }
+
+    .welcome-box span{
+
+        font-size:56px;
+
+    }
+
+}
+
+#reservafoto{
+ width: 700px;
+ height:auto;
+}
+
+#alimentacao{
+    width: 700px;
+    height: auto;
+}
+
+#inicial{
+    width: 1000px;
+    height: auto;
+}
